@@ -1,7 +1,4 @@
 const express = require('express');
-const router = express.Router();
-const logger = require('../lib/logger');
-const const express = require('express');
 
 const router = express.Router();
 const logger = require('../lib/logger');
@@ -25,15 +22,10 @@ router.post('/', isLoggedIn, async (req, res) => {
 
       res.status(500).json({ err: err.toString() });
     }
-    // if (!params.code) {
-    //   const err = new Error('Not allowed null (code)');
-    //   logger.error(err.toString());
-
-    //   res.status(500).json({ err: err.toString() });
-    // }
 
     // 비즈니스 로직 호출
     const result = await departmentService.reg(params);
+    logger.info(`(department.reg.result) ${JSON.stringify(result)}`);
 
     // 최종 응답
     res.status(200).json(result);
@@ -42,17 +34,16 @@ router.post('/', isLoggedIn, async (req, res) => {
   }
 });
 
-// 리스트 검색
-router.get('/', async (req, res) => {
+// 리스트 조회
+router.get('/', isLoggedIn, async (req, res) => {
   try {
     const params = {
-      id: req.query.id ? req.query.id.split(',') : null,
       name: req.query.name,
     };
     logger.info(`(department.list.params) ${JSON.stringify(params)}`);
 
-    // 비즈니스 로직 호출
     const result = await departmentService.list(params);
+    logger.info(`(department.list.result) ${JSON.stringify(result)}`);
 
     // 최종 응답
     res.status(200).json(result);
@@ -61,16 +52,16 @@ router.get('/', async (req, res) => {
   }
 });
 
-// 상세정보
-router.get('/:id', async (req, res) => {
+// 상세정보 조회
+router.get('/:id', isLoggedIn, async (req, res) => {
   try {
     const params = {
       id: req.params.id,
     };
     logger.info(`(department.info.params) ${JSON.stringify(params)}`);
 
-    // 비즈니스 로직 호출
     const result = await departmentService.info(params);
+    logger.info(`(department.info.result) ${JSON.stringify(result)}`);
 
     // 최종 응답
     res.status(200).json(result);
@@ -79,8 +70,8 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// 부서 수정
-router.put('/:id', async (req, res) => {
+// 수정
+router.put('/:id', isLoggedIn, async (req, res) => {
   try {
     const params = {
       id: req.params.id,
@@ -88,10 +79,10 @@ router.put('/:id', async (req, res) => {
       code: req.body.code,
       description: req.body.description,
     };
-    logger.info(`(department.edit.params) ${JSON.stringify(params)}`);
+    logger.info(`(department.update.params) ${JSON.stringify(params)}`);
 
-    // 비즈니스 로직 호출
     const result = await departmentService.edit(params);
+    logger.info(`(department.update.result) ${JSON.stringify(result)}`);
 
     // 최종 응답
     res.status(200).json(result);
@@ -100,16 +91,16 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-// 부서 삭제
-router.delete('/:id', async (req, res) => {
+// 삭제
+router.delete('/:id', isLoggedIn, async (req, res) => {
   try {
     const params = {
       id: req.params.id,
     };
     logger.info(`(department.delete.params) ${JSON.stringify(params)}`);
 
-    // 비즈니스 로직 호출
     const result = await departmentService.delete(params);
+    logger.info(`(department.delete.result) ${JSON.stringify(result)}`);
 
     // 최종 응답
     res.status(200).json(result);
@@ -117,4 +108,5 @@ router.delete('/:id', async (req, res) => {
     res.status(500).json({ err: err.toString() });
   }
 });
+
 module.exports = router;
