@@ -136,3 +136,104 @@ notNull Violation: User.password cannot be null
 2023-05-24 16:51:25.261[info] app start
 2023-05-24 16:51:25.323[info] DB connection success
 2023-05-24 16:51:25.357[info] Sequelize sync success
+2023-05-24 17:00:46.709[info] (board.reg.params) {"title":"SMafaCTEAM","active":"false","userId":"2"}
+2023-05-24 17:00:46.745[debug] (boardService.reg) {"id":2,"title":"SMafaCTEAM","active":false,"userId":"2","updatedAt":"2023-05-24T08:00:46.715Z","createdAt":"2023-05-24T08:00:46.715Z"}
+2023-05-24 17:00:46.747[info] (board.reg.result) {"id":2,"title":"SMafaCTEAM","active":false,"userId":"2","updatedAt":"2023-05-24T08:00:46.715Z","createdAt":"2023-05-24T08:00:46.715Z"}
+2023-05-24 17:01:01.996[info] (board.list.params) {"userIds":null}
+2023-05-24 17:01:02.045[debug] (boardService.list) {"count":2,"rows":[{"id":2,"userId":2,"title":"SMafaCTEAM","active":false,"createdAt":"2023-05-24T08:00:46.000Z","updatedAt":"2023-05-24T08:00:46.000Z","deletedAt":null,"User":{"id":2,"name":"test","role":"member","email":"kim@email.com","phone":"010-1234-5678"}},{"id":1,"userId":1,"title":"hi","active":true,"createdAt":"2023-05-24T00:00:00.000Z","updatedAt":"2023-05-24T00:00:00.000Z","deletedAt":null,"User":{"id":1,"name":"kimhi","role":"1","email":"1@1","phone":"111-1111-1111"}}]}
+2023-05-24 17:01:02.047[info] (board.list.result) {"count":2,"rows":[{"id":2,"userId":2,"title":"SMafaCTEAM","active":false,"createdAt":"2023-05-24T08:00:46.000Z","updatedAt":"2023-05-24T08:00:46.000Z","deletedAt":null,"User":{"id":2,"name":"test","role":"member","email":"kim@email.com","phone":"010-1234-5678"}},{"id":1,"userId":1,"title":"hi","active":true,"createdAt":"2023-05-24T00:00:00.000Z","updatedAt":"2023-05-24T00:00:00.000Z","deletedAt":null,"User":{"id":1,"name":"kimhi","role":"1","email":"1@1","phone":"111-1111-1111"}}]}
+2023-05-24 17:01:16.084[info] (board.info.params) {"id":"1"}
+2023-05-24 17:01:16.087[error] (boardService.info) TypeError: Cannot read property 'replace' of undefined
+2023-05-24 17:03:31.914[info] (board.update.params) {"id":"1","title":"TESTCODE","active":"true"}
+2023-05-24 17:03:31.929[debug] (boardService.edit) {"updatedCount":1}
+2023-05-24 17:03:31.930[info] (board.update.result) {"updatedCount":1}
+2023-05-24 17:03:46.276[info] (board.delete.params) {"id":"1"}
+2023-05-24 17:03:46.303[debug] (boardService.) {"deletedCount":1}
+2023-05-24 17:03:46.304[info] (board.delete.result) {"deletedCount":1}
+2023-05-24 17:04:01.104[info] (post.reg.params) {"boardId":"1","title":"테스트 상세설명","content":"dd","imagePath":"ss","filePath":"sda","userId":"SMafaCTEAM"}
+2023-05-24 17:04:01.106[error] (postService.reg) SequelizeValidationError: notNull Violation: User.userid cannot be null,
+notNull Violation: User.password cannot be null
+2023-05-24 17:04:40.545[info] (department.reg.params) {"name":"1","code":"SMafaCTEAM","description":"테스트 상세설명"}
+2023-05-24 17:04:40.564[debug] (departmentService.reg) {"id":2,"name":"1","code":"SMafaCTEAM","description":"테스트 상세설명","updatedAt":"2023-05-24T08:04:40.547Z","createdAt":"2023-05-24T08:04:40.547Z"}
+2023-05-24 17:04:40.566[info] (department.reg.result) {"id":2,"name":"1","code":"SMafaCTEAM","description":"테스트 상세설명","updatedAt":"2023-05-24T08:04:40.547Z","createdAt":"2023-05-24T08:04:40.547Z"}
+2023-05-24 17:04:44.841[error] Error: Unauthorized token
+2023-05-24 17:04:54.977[info] (department.list.params) {}
+2023-05-24 17:04:54.988[debug] (departmentService.list) {"count":2,"rows":[{"id":2,"name":"1","code":"SMafaCTEAM","description":"테스트 상세설명","createdAt":"2023-05-24T08:04:40.000Z","updatedAt":"2023-05-24T08:04:40.000Z","deletedAt":null},{"id":1,"name":"hi","code":"1","description":"hihi","createdAt":"2023-05-24T00:00:00.000Z","updatedAt":"2023-05-24T00:00:00.000Z","deletedAt":null}]}
+2023-05-24 17:04:54.990[info] (department.list.result) {"count":2,"rows":[{"id":2,"name":"1","code":"SMafaCTEAM","description":"테스트 상세설명","createdAt":"2023-05-24T08:04:40.000Z","updatedAt":"2023-05-24T08:04:40.000Z","deletedAt":null},{"id":1,"name":"hi","code":"1","description":"hihi","createdAt":"2023-05-24T00:00:00.000Z","updatedAt":"2023-05-24T00:00:00.000Z","deletedAt":null}]}
+2023-05-24 17:05:01.386[error] Error: Unauthorized token
+2023-05-24 17:05:11.366[info] (department.info.params) {"id":"1"}
+2023-05-24 17:05:11.374[debug] (departmentService.info) {"id":1,"name":"hi","code":"1","description":"hihi","createdAt":"2023-05-24T00:00:00.000Z","updatedAt":"2023-05-24T00:00:00.000Z","deletedAt":null}
+2023-05-24 17:05:11.375[info] (department.info.result) {"id":1,"name":"hi","code":"1","description":"hihi","createdAt":"2023-05-24T00:00:00.000Z","updatedAt":"2023-05-24T00:00:00.000Z","deletedAt":null}
+2023-05-24 17:05:24.138[info] (department.update.params) {"id":"1","name":"수정","code":"TESTCODE","description":"테스트 상세 수정"}
+2023-05-24 17:05:24.146[debug] (departmentService.edit) {"updatedCount":1}
+2023-05-24 17:05:24.148[info] (department.update.result) {"updatedCount":1}
+2023-05-24 17:05:36.486[info] (department.delete.params) {"id":"1"}
+2023-05-24 17:05:36.499[debug] (departmentService.) {"deletedCount":1}
+2023-05-24 17:05:36.500[info] (department.delete.result) {"deletedCount":1}
+2023-05-24 17:06:32.947[info] (post.reg.params) {"boardId":"1","title":"테스트 상세설명","content":"dd","imagePath":"ss","filePath":"sda","userId":"SMafaCTEAM"}
+2023-05-24 17:06:32.948[error] (postService.reg) SequelizeValidationError: notNull Violation: User.userid cannot be null,
+notNull Violation: User.password cannot be null
+2023-05-24 17:06:37.498[info] (post.list.params) {"userIds":null}
+2023-05-24 17:06:37.510[debug] (postService.list) {"count":0,"rows":[]}
+2023-05-24 17:06:37.511[info] (post.list.result) {"count":0,"rows":[]}
+2023-05-24 17:06:48.031[info] (post.reg.params) {"boardId":"1","title":"테스트 상세설명","content":"dd","imagePath":"ss","filePath":"sda","userId":"SMafaCTEAM"}
+2023-05-24 17:06:48.032[error] (postService.reg) SequelizeValidationError: notNull Violation: User.userid cannot be null,
+notNull Violation: User.password cannot be null
+2023-05-24 17:06:50.283[info] (post.reg.params) {"boardId":"1","title":"테스트 상세설명","content":"dd","imagePath":"ss","filePath":"sda","userId":"SMafaCTEAM"}
+2023-05-24 17:06:50.284[error] (postService.reg) SequelizeValidationError: notNull Violation: User.userid cannot be null,
+notNull Violation: User.password cannot be null
+2023-05-24 17:07:04.535[info] (post.info.params) {"id":"1"}
+2023-05-24 17:07:04.538[error] (postService.info) SequelizeEagerLoadingError: Comment is associated to Post using an alias. You've included an alias (Comment), but it does not match the alias(es) defined in your association (Comments).
+2023-05-24 17:08:04.515[info] (post.update.params) {"id":"1","title":"테스트 상세설명","content":"d수정d","imagePath":"ss","filePath":"sda"}
+2023-05-24 17:08:04.529[debug] (postService.edit) {"updatedCount":0}
+2023-05-24 17:08:04.530[info] (post.update.result) {"updatedCount":0}
+2023-05-24 17:08:09.140[info] (post.delete.params) {"id":"1"}
+2023-05-24 17:08:09.143[debug] (postService.) {"deletedCount":0}
+2023-05-24 17:08:09.144[info] (post.delete.result) {"deletedCount":0}
+2023-05-24 17:08:13.392[info] (post.reg.params) {"boardId":"1","title":"테스트 상세설명","content":"dd","imagePath":"ss","filePath":"sda","userId":"SMafaCTEAM"}
+2023-05-24 17:08:13.393[error] (postService.reg) SequelizeValidationError: notNull Violation: User.userid cannot be null,
+notNull Violation: User.password cannot be null
+2023-05-24 17:09:26.993[info] app start
+2023-05-24 17:09:27.052[info] DB connection success
+2023-05-24 17:09:27.081[info] Sequelize sync success
+2023-05-24 17:15:30.371[info] app start
+2023-05-24 17:15:30.431[info] DB connection success
+2023-05-24 17:15:30.459[info] Sequelize sync success
+2023-05-24 17:15:34.479[info] (board.info.params) {"id":"1"}
+2023-05-24 17:15:34.486[error] (boardService.info) TypeError: Cannot read property 'replace' of undefined
+2023-05-24 17:15:39.509[info] app start
+2023-05-24 17:15:39.563[info] DB connection success
+2023-05-24 17:15:39.593[info] Sequelize sync success
+2023-05-24 17:20:31.707[info] uploads\1684916431701-a.jpg
+2023-05-24 17:20:31.708[info] (post.reg.result) {"originalname":"a.jpg","path":"uploads\\1684916431701-a.jpg"}
+2023-05-24 17:30:35.693[info] app start
+2023-05-24 17:30:35.751[info] DB connection success
+2023-05-24 17:30:35.783[info] Sequelize sync success
+2023-05-24 17:30:39.323[info] (board.info.params) {"id":"1"}
+2023-05-24 17:30:39.329[error] (boardService.info) TypeError: Cannot read property 'replace' of undefined
+2023-05-24 17:33:09.145[info] (board.reg.params) {"title":"SMafaCTEAM","active":"false","userId":"2"}
+2023-05-24 17:33:09.174[debug] (boardService.reg) {"id":3,"title":"SMafaCTEAM","active":false,"userId":"2","updatedAt":"2023-05-24T08:33:09.150Z","createdAt":"2023-05-24T08:33:09.150Z"}
+2023-05-24 17:33:09.176[info] (board.reg.result) {"id":3,"title":"SMafaCTEAM","active":false,"userId":"2","updatedAt":"2023-05-24T08:33:09.150Z","createdAt":"2023-05-24T08:33:09.150Z"}
+2023-05-24 17:33:20.947[info] (board.reg.params) {"title":"SMafaCTEAM","active":"true","userId":"2"}
+2023-05-24 17:33:20.960[debug] (boardService.reg) {"id":4,"title":"SMafaCTEAM","active":true,"userId":"2","updatedAt":"2023-05-24T08:33:20.948Z","createdAt":"2023-05-24T08:33:20.948Z"}
+2023-05-24 17:33:20.961[info] (board.reg.result) {"id":4,"title":"SMafaCTEAM","active":true,"userId":"2","updatedAt":"2023-05-24T08:33:20.948Z","createdAt":"2023-05-24T08:33:20.948Z"}
+2023-05-24 17:33:27.257[info] (board.info.params) {"id":"4"}
+2023-05-24 17:33:27.261[error] (boardService.info) TypeError: Cannot read property 'replace' of undefined
+2023-05-24 17:33:44.603[info] (board.list.params) {"userIds":null}
+2023-05-24 17:33:44.623[debug] (boardService.list) {"count":3,"rows":[{"id":4,"userId":2,"title":"SMafaCTEAM","active":true,"createdAt":"2023-05-24T08:33:20.000Z","updatedAt":"2023-05-24T08:33:20.000Z","deletedAt":null,"User":{"id":2,"name":"test","role":"member","email":"kim@email.com","phone":"010-1234-5678"}},{"id":3,"userId":2,"title":"SMafaCTEAM","active":false,"createdAt":"2023-05-24T08:33:09.000Z","updatedAt":"2023-05-24T08:33:09.000Z","deletedAt":null,"User":{"id":2,"name":"test","role":"member","email":"kim@email.com","phone":"010-1234-5678"}},{"id":2,"userId":2,"title":"SMafaCTEAM","active":false,"createdAt":"2023-05-24T08:00:46.000Z","updatedAt":"2023-05-24T08:00:46.000Z","deletedAt":null,"User":{"id":2,"name":"test","role":"member","email":"kim@email.com","phone":"010-1234-5678"}}]}
+2023-05-24 17:33:44.625[info] (board.list.result) {"count":3,"rows":[{"id":4,"userId":2,"title":"SMafaCTEAM","active":true,"createdAt":"2023-05-24T08:33:20.000Z","updatedAt":"2023-05-24T08:33:20.000Z","deletedAt":null,"User":{"id":2,"name":"test","role":"member","email":"kim@email.com","phone":"010-1234-5678"}},{"id":3,"userId":2,"title":"SMafaCTEAM","active":false,"createdAt":"2023-05-24T08:33:09.000Z","updatedAt":"2023-05-24T08:33:09.000Z","deletedAt":null,"User":{"id":2,"name":"test","role":"member","email":"kim@email.com","phone":"010-1234-5678"}},{"id":2,"userId":2,"title":"SMafaCTEAM","active":false,"createdAt":"2023-05-24T08:00:46.000Z","updatedAt":"2023-05-24T08:00:46.000Z","deletedAt":null,"User":{"id":2,"name":"test","role":"member","email":"kim@email.com","phone":"010-1234-5678"}}]}
+2023-05-24 17:34:26.129[info] (post.reg.params) {"boardId":"1","title":"테스트 상세설명","content":"dd","imagePath":"ss","filePath":"sda","userId":"ss"}
+2023-05-24 17:34:26.132[error] (postService.reg) SequelizeValidationError: notNull Violation: User.userid cannot be null,
+notNull Violation: User.password cannot be null
+2023-05-24 17:34:57.909[info] (post.reg.params) {"boardId":"4","title":"테스트 상세설명","content":"dd","imagePath":"","filePath":"","userId":"ss"}
+2023-05-24 17:34:57.912[error] (postService.reg) SequelizeValidationError: notNull Violation: User.userid cannot be null,
+notNull Violation: User.password cannot be null
+2023-05-24 17:36:12.929[info] (post.reg.params) {"boardId":"4","title":"테스트 상세설명","content":"dd","imagePath":"","filePath":"","userId":"ss"}
+2023-05-24 17:36:12.930[error] (postService.reg) SequelizeValidationError: notNull Violation: User.userid cannot be null,
+notNull Violation: User.password cannot be null
+2023-05-24 17:36:23.143[info] (post.list.params) {"userIds":null}
+2023-05-24 17:36:23.156[debug] (postService.list) {"count":0,"rows":[]}
+2023-05-24 17:36:23.157[info] (post.list.result) {"count":0,"rows":[]}
+2023-05-24 17:40:48.934[info] (post.reg.params) {"boardId":"1","title":"테스트 상세설명","content":"dd","imagePath":"ss","filePath":"sda","userId":"SMafaCTEAM"}
+2023-05-24 17:40:48.936[error] (postService.reg) SequelizeValidationError: notNull Violation: User.userid cannot be null,
+notNull Violation: User.password cannot be null
