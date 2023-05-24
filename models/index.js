@@ -1,6 +1,6 @@
 const { sequelize } = require('./connection');
 const Department = require('./department');
-const User = require('./user');
+const User = require('./users');
 const Board = require('./board');
 const Post = require('./post');
 const Comment = require('./comment');
@@ -25,3 +25,5 @@ Object.keys(db).forEach((modelName) => {
     db[modelName].associate(db);
   }
 });
+
+module.exports = db;

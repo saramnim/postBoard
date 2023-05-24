@@ -9,7 +9,7 @@ module.exports = class User extends Sequelize.Model {
       name: {
         type: Sequelize.STRING(100),
       },
-      userid: {
+      userId: {
         type: Sequelize.STRING(255),
       },
       password: {
@@ -44,4 +44,5 @@ module.exports = class User extends Sequelize.Model {
       },
     });
   }
+  static includeAttributes = ['id', 'name', 'role'];
 };

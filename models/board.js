@@ -8,9 +8,12 @@ module.exports = class Board extends Sequelize.Model {
       },
       title: {
         type: Sequelize.STRING(50),
+        allowNull: false,
       },
       active: {
-        type: Sequelize.TINYINT,
+        type: Sequelize.BOOLEAN,
+        allowNull: false,
+        defaultValue: true,
       },
     }, {
       sequelize,
@@ -22,9 +25,11 @@ module.exports = class Board extends Sequelize.Model {
 
   static associate(db) {
     db.Board.hasMany(db.Post, {
-      foreignKey: { name: 'boardId' },
-      onDelete: 'SET NULL',
-      as: 'Post',
+      foreignKey: {
+        name: 'boardId',
+        onDelete: 'SET NULL',
+        as: 'Post',
+      },
     });
     db.Board.belongsTo(db.User, {
       foreignKey: {
@@ -34,4 +39,5 @@ module.exports = class Board extends Sequelize.Model {
       },
     });
   }
+  static includeAttributes = ['id', 'title', 'active', 'createdAt'];
 };

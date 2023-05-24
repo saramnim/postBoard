@@ -6,7 +6,7 @@ module.exports = class Post extends Sequelize.Model {
       boardId: {
         type: Sequelize.INTEGER,
       },
-      userid: {
+      userId: {
         type: Sequelize.INTEGER,
       },
       content: {
@@ -30,7 +30,7 @@ module.exports = class Post extends Sequelize.Model {
     });
     db.Post.belongsTo(db.User, {
       foreignKey: {
-        name: 'userid',
+        name: 'userId',
         onDelete: 'SET NULL',
         as: 'User',
       },
