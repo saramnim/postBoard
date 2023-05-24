@@ -39,5 +39,6 @@ module.exports = class Board extends Sequelize.Model {
       },
     });
   }
+
   static includeAttributes = ['id', 'title', 'active', 'createdAt'];
 };

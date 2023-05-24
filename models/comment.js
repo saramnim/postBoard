@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 
-module.exports = class Post extends Sequelize.Model {
+module.exports = class Comment extends Sequelize.Model {
   static init(sequelize) {
     return super.init({
       boardId: {
@@ -21,14 +21,14 @@ module.exports = class Post extends Sequelize.Model {
   }
 
   static associate(db) {
-    db.Post.belongsTo(db.Board, {
+    db.Comment.belongsTo(db.Post, {
       foreignKey: {
-        name: 'boardId',
+        name: 'postId',
         onDelete: 'SET NULL',
-        as: 'Board',
+        as: 'Post',
       },
     });
-    db.Post.belongsTo(db.User, {
+    db.Comment.belongsTo(db.User, {
       foreignKey: {
         name: 'userId',
         onDelete: 'SET NULL',

@@ -8,9 +8,11 @@ module.exports = class Post extends Sequelize.Model {
       },
       userId: {
         type: Sequelize.INTEGER,
+        allowNull: false,
       },
       title: {
         type: Sequelize.STRING(255),
+        allowNull: false,
       },
       content: {
         type: Sequelize.TEXT,
