@@ -1,15 +1,13 @@
 const { Op } = require('sequelize');
 const {
-  User, Board,
+  User, Board, Post,
 } = require('../models/index');
 
 const dao = {
   insert(params) {
     return new Promise((resolve, reject) => {
-      User.create(params)
+      Board.create(params)
         .then((inserted) => {
-          const insertedResult = { ...inserted };
-          delete insertedResult.dataValues.password;
           resolve(inserted);
         })
         .catch((err) => {
@@ -26,6 +24,12 @@ const dao = {
         title: { [Op.like]: `%${params.title}%` }, // like검색
       };
     }
+    if (params.active) {
+      setQuery.where = {
+        ...setQuery.where,
+        active: params.active, // '=' 검색
+      };
+    }
     if (params.userId) {
       setQuery.where = {
         ...setQuery.where,
@@ -35,14 +39,12 @@ const dao = {
     setQuery.order = [['id', 'DESC']];
     return new Promise((resolve, reject) => {
       // Board.findAll
-      User.findAndCountAll({
+      Board.findAndCountAll({
         ...setQuery,
-        attributes: { exclude: ['content'] },
         include: [
           {
-            model: Board,
-            as: 'Board',
-            attributes: ['userId'],
+            model: User,
+            attributes: User.includeAttributes,
           },
         ],
       })
@@ -56,12 +58,21 @@ const dao = {
   },
   selectInfo(params) {
     return new Promise((resolve, reject) => {
-      // Board.findAll
       Board.findByPk(params.id, {
         include: [
           {
-            model: Board,
-            as: 'Board',
+            model: Post,
+            as: 'Posts',
+            attributes: Post.includeAttributes,
+            include: [{
+              model: User,
+              as: 'User',
+              attributes: User.includeAttributes,
+            }],
+          }, {
+            model: User,
+            as: 'User',
+            attributes: User.includeAttributes,
           },
         ],
       })
@@ -75,7 +86,6 @@ const dao = {
   },
   update(params) {
     return new Promise((resolve, reject) => {
-      // User.findAll
       Board.update(params, {
         where: { id: params.id },
       })
@@ -95,23 +105,6 @@ const dao = {
       })
         .then((deleted) => {
           resolve({ deletedCount: deleted });
-        })
-        .catch((err) => {
-          reject(err);
-        });
-    });
-  },
-  selectUser(params) {
-    return new Promise((resolve, reject) => {
-      // Board.findAll
-      Board.findOne({
-        attributes: ['id', 'userId', 'title', 'active'],
-        where: {
-          userId: params.userId,
-        },
-      })
-        .then((selectedOne) => {
-          resolve(selectedOne);
         })
         .catch((err) => {
           reject(err);

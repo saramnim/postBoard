@@ -1,6 +1,6 @@
 const { Op } = require('sequelize');
 const {
-  User, Board, Post,
+  User, Board, Post, Department,
 } = require('../models/index');
 
 const dao = {
@@ -8,8 +8,6 @@ const dao = {
     return new Promise((resolve, reject) => {
       User.create(params)
         .then((inserted) => {
-          const insertedResult = { ...inserted };
-          delete insertedResult.dataValues.password;
           resolve(inserted);
         })
         .catch((err) => {
@@ -20,31 +18,33 @@ const dao = {
   selectList(params) {
     // where 검색 조건
     const setQuery = {};
-    if (params.id) {
+    if (params.title) {
       setQuery.where = {
         ...setQuery.where,
-        id: { [Op.like]: `%${params.id}%` }, // like검색
+        title: { [Op.like]: `%${params.title}%` }, // like검색
       };
     }
-    if (params.userId) {
+    if (params.content) {
       setQuery.where = {
         ...setQuery.where,
-        userId: params.userId, // like검색
+        content: { [Op.like]: `%${params.content}%` }, // like검색
+      };
+    }
+    if (params.userIds) {
+      setQuery.where = {
+        ...setQuery.where,
+        userId: params.userIds, // in 검색
       };
     }
     setQuery.order = [['id', 'DESC']];
     return new Promise((resolve, reject) => {
-      // Board.findAll
-      User.findAndCountAll({
+      Post.findAndCountAll({
         ...setQuery,
-        attributes: { exclude: ['content'] },
-        include: [
-          {
-            model: Board,
-            as: 'Board',
-            attributes: ['userId', 'title'],
-          },
-        ],
+        include: [{
+          model: User,
+          as: 'User',
+          attributes: User.includeAttributes,
+        }],
       })
         .then((selectedList) => {
           resolve(selectedList);
@@ -56,27 +56,32 @@ const dao = {
   },
   selectInfo(params) {
     return new Promise((resolve, reject) => {
-      // Board.findAll
-      User.findByPk(params.id, {
-        include: [
-          {
-            model: Board,
-            as: 'Board',
-          },
+      Post.findByPk(params.id, {
+        include: [{
+          model: Board,
+          as: 'Board',
+          attributes: Board.includeAttributes,
+        }, {
+          model: User,
+          as: 'User',
+          attributes: User.includeAttributes,
+          include: [{
+            model: Department,
+            as: 'Department',
+            attributes: Department.includeAttributes,
+          }],
+        },
         ],
-      })
-        .then((selectedInfo) => {
-          resolve(selectedInfo);
-        })
-        .catch((err) => {
-          reject(err);
-        });
+      }).then((selectedInfo) => {
+        resolve(selectedInfo);
+      }).catch((err) => {
+        reject(err);
+      });
     });
   },
   update(params) {
     return new Promise((resolve, reject) => {
-      // User.findAll
-      User.update(params, {
+      Post.update(params, {
         where: { id: params.id },
       })
         .then(([updated]) => {
@@ -89,29 +94,11 @@ const dao = {
   },
   delete(params) {
     return new Promise((resolve, reject) => {
-      // User.findAll
-      User.destroy({
+      Post.destroy({
         where: { id: params.id },
       })
         .then((deleted) => {
           resolve({ deletedCount: deleted });
-        })
-        .catch((err) => {
-          reject(err);
-        });
-    });
-  },
-  selectUser(params) {
-    return new Promise((resolve, reject) => {
-      // Board.findAll
-      User.findOne({
-        attributes: ['id', 'userId', 'content', 'imagePath', 'filePath'],
-        where: {
-          userId: params.userId,
-        },
-      })
-        .then((selectedOne) => {
-          resolve(selectedOne);
         })
         .catch((err) => {
           reject(err);

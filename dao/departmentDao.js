@@ -11,15 +11,10 @@ const dao = {
       });
     });
   },
+
+  // 라스트 조회
   selectList(params) {
     const setQuery = {};
-
-    if (params.id) {
-      setQuery.where = {
-        ...setQuery.where,
-        id: params.id,
-      };
-    }
     if (params.name) {
       setQuery.where = {
         ...setQuery.where,
@@ -30,7 +25,6 @@ const dao = {
     return new Promise((resolve, reject) => {
       Department.findAndCountAll({
         ...setQuery,
-        attributes: { exclude: ['description'] },
       }).then((selectedList) => {
         resolve(selectedList);
       }).catch((err) => {

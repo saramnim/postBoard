@@ -32,16 +32,13 @@ const dao = {
     }
     setQuery.order = [['id', 'DESC']];
     return new Promise((resolve, reject) => {
-      // Department.findAll
       User.findAndCountAll({
         ...setQuery,
         attributes: { exclude: ['password'] },
-        include: [
-          {
-            model: Department,
-            as: 'Department',
-            attributes: ['name', 'code'],
-          },
+        include: [{
+          model: Department,
+          as: 'Department',
+        },
         ],
       })
         .then((selectedList) => {
@@ -52,68 +49,63 @@ const dao = {
         });
     });
   },
-  selectInfo(params) {
-    return new Promise((resolve, reject) => {
-      // Department.findAll
-      User.findByPk(params.id, {
-        include: [
-          {
-            model: Department,
-            as: 'Department',
-          },
-        ],
-      })
-        .then((selectedInfo) => {
-          resolve(selectedInfo);
-        })
-        .catch((err) => {
-          reject(err);
-        });
-    });
-  },
-  update(params) {
-    return new Promise((resolve, reject) => {
-      // User.findAll
-      User.update(params, {
-        where: { id: params.id },
-      })
-        .then(([updated]) => {
-          resolve({ updatedCount: updated });
-        })
-        .catch((err) => {
-          reject(err);
-        });
-    });
-  },
-  delete(params) {
-    return new Promise((resolve, reject) => {
-      // User.findAll
-      User.destroy({
-        where: { id: params.id },
-      })
-        .then((deleted) => {
-          resolve({ deletedCount: deleted });
-        })
-        .catch((err) => {
-          reject(err);
-        });
-    });
-  },
+  // selectInfo(params) {
+  //   return new Promise((resolve, reject) => {
+  //     // Department.findAll
+  //     User.findByPk(params.id, {
+  //       include: [
+  //         {
+  //           model: Department,
+  //           as: 'Department',
+  //         },
+  //       ],
+  //     })
+  //       .then((selectedInfo) => {
+  //         resolve(selectedInfo);
+  //       })
+  //       .catch((err) => {
+  //         reject(err);
+  //       });
+  //   });
+  // },
+  // update(params) {
+  //   return new Promise((resolve, reject) => {
+  //     // User.findAll
+  //     User.update(params, {
+  //       where: { id: params.id },
+  //     })
+  //       .then(([updated]) => {
+  //         resolve({ updatedCount: updated });
+  //       })
+  //       .catch((err) => {
+  //         reject(err);
+  //       });
+  //   });
+  // },
+  // delete(params) {
+  //   return new Promise((resolve, reject) => {
+  //     // User.findAll
+  //     User.destroy({
+  //       where: { id: params.id },
+  //     })
+  //       .then((deleted) => {
+  //         resolve({ deletedCount: deleted });
+  //       })
+  //       .catch((err) => {
+  //         reject(err);
+  //       });
+  //   });
+  // },
   selectUser(params) {
     return new Promise((resolve, reject) => {
-      // Department.findAll
       User.findOne({
         attributes: ['id', 'userId', 'password', 'name', 'role'],
-        where: {
-          userId: params.userId,
-        },
-      })
-        .then((selectedOne) => {
-          resolve(selectedOne);
-        })
-        .catch((err) => {
-          reject(err);
-        });
+        where: { userId: params.userId },
+      }).then((selectedOne) => {
+        resolve(selectedOne);
+      }).catch((err) => {
+        reject(err);
+      });
     });
   },
 };

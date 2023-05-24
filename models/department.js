@@ -30,4 +30,6 @@ module.exports = class Department extends Sequelize.Model {
       as: 'User',
     });
   }
+
+  static includeAttributes = ['id', 'name', 'createdAt'];
 };

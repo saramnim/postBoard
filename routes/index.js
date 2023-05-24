@@ -1,5 +1,9 @@
 const express = require('express');
-const boardRouter = require('board');
+const boardRouter = require('./board');
+const userRouter = require('./users');
+const commentRouter = require('./comment');
+const postRouter = require('./post');
+const departmentRouter = require('./department');
 
 const router = express.Router();
 

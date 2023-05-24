@@ -21,6 +21,11 @@ module.exports = class Post extends Sequelize.Model {
       filePath: {
         type: Sequelize.STRING(255),
       },
+      viewCount: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        defaultValue: 0,
+      }
     }, {
       sequelize,
       underscored: true,
