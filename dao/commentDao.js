@@ -8,8 +8,6 @@ const dao = {
     return new Promise((resolve, reject) => {
       User.create(params)
         .then((inserted) => {
-          const insertedResult = { ...inserted };
-          delete insertedResult.dataValues.password;
           resolve(inserted);
         })
         .catch((err) => {

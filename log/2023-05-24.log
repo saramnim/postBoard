@@ -1,0 +1,138 @@
+2023-05-24 15:43:20.150[info] app start
+2023-05-24 15:43:20.207[info] DB connection success
+2023-05-24 15:43:20.369[info] Sequelize sync success
+2023-05-24 15:55:40.908[info] app start
+2023-05-24 15:55:40.970[info] DB connection success
+2023-05-24 15:55:41.012[info] Sequelize sync success
+2023-05-24 15:58:23.050[info] (user.list.params) {}
+2023-05-24 15:58:23.087[debug] (userService.list) {"count":1,"rows":[{"id":1,"departmentId":1,"name":"kimhi","userid":"1","role":"1","email":"1@1","phone":"111-1111-1111","updatedPwDate":"2023-05-24T00:00:00.000Z","createdAt":"2023-05-24T00:00:00.000Z","updatedAt":"2023-05-24T00:00:00.000Z","deletedAt":null,"Department":{"id":1,"name":"hi","code":"1","description":"hihi","createdAt":"2023-05-24T00:00:00.000Z","updatedAt":"2023-05-24T00:00:00.000Z","deletedAt":null}}]}
+2023-05-24 15:58:23.091[info] (user.list.result) {"count":1,"rows":[{"id":1,"departmentId":1,"name":"kimhi","userid":"1","role":"1","email":"1@1","phone":"111-1111-1111","updatedPwDate":"2023-05-24T00:00:00.000Z","createdAt":"2023-05-24T00:00:00.000Z","updatedAt":"2023-05-24T00:00:00.000Z","deletedAt":null,"Department":{"id":1,"name":"hi","code":"1","description":"hihi","createdAt":"2023-05-24T00:00:00.000Z","updatedAt":"2023-05-24T00:00:00.000Z","deletedAt":null}}]}
+2023-05-24 15:58:56.466[info] (user.reg.params) {"departmentId":1,"name":"test","userid":"test","password":"test","role":"member","email":"kim@email.com","phone":"010-1234-5678"}
+2023-05-24 15:58:56.468[debug] (userService.makePassword) "test"
+2023-05-24 15:58:56.492[debug] (userService.reg) {"id":2,"departmentId":1,"name":"test","userid":"test","role":"member","email":"kim@email.com","phone":"010-1234-5678","updatedAt":"2023-05-24T06:58:56.471Z","createdAt":"2023-05-24T06:58:56.471Z"}
+2023-05-24 15:58:56.494[info] (user.reg.result) {"id":2,"departmentId":1,"name":"test","userid":"test","role":"member","email":"kim@email.com","phone":"010-1234-5678","updatedAt":"2023-05-24T06:58:56.471Z","createdAt":"2023-05-24T06:58:56.471Z"}
+2023-05-24 15:59:01.816[info] (user.list.params) {}
+2023-05-24 15:59:01.831[debug] (userService.list) {"count":2,"rows":[{"id":2,"departmentId":1,"name":"test","userid":"test","role":"member","email":"kim@email.com","phone":"010-1234-5678","updatedPwDate":null,"createdAt":"2023-05-24T06:58:56.000Z","updatedAt":"2023-05-24T06:58:56.000Z","deletedAt":null,"Department":{"id":1,"name":"hi","code":"1","description":"hihi","createdAt":"2023-05-24T00:00:00.000Z","updatedAt":"2023-05-24T00:00:00.000Z","deletedAt":null}},{"id":1,"departmentId":1,"name":"kimhi","userid":"1","role":"1","email":"1@1","phone":"111-1111-1111","updatedPwDate":"2023-05-24T00:00:00.000Z","createdAt":"2023-05-24T00:00:00.000Z","updatedAt":"2023-05-24T00:00:00.000Z","deletedAt":null,"Department":{"id":1,"name":"hi","code":"1","description":"hihi","createdAt":"2023-05-24T00:00:00.000Z","updatedAt":"2023-05-24T00:00:00.000Z","deletedAt":null}}]}
+2023-05-24 15:59:01.835[info] (user.list.result) {"count":2,"rows":[{"id":2,"departmentId":1,"name":"test","userid":"test","role":"member","email":"kim@email.com","phone":"010-1234-5678","updatedPwDate":null,"createdAt":"2023-05-24T06:58:56.000Z","updatedAt":"2023-05-24T06:58:56.000Z","deletedAt":null,"Department":{"id":1,"name":"hi","code":"1","description":"hihi","createdAt":"2023-05-24T00:00:00.000Z","updatedAt":"2023-05-24T00:00:00.000Z","deletedAt":null}},{"id":1,"departmentId":1,"name":"kimhi","userid":"1","role":"1","email":"1@1","phone":"111-1111-1111","updatedPwDate":"2023-05-24T00:00:00.000Z","createdAt":"2023-05-24T00:00:00.000Z","updatedAt":"2023-05-24T00:00:00.000Z","deletedAt":null,"Department":{"id":1,"name":"hi","code":"1","description":"hihi","createdAt":"2023-05-24T00:00:00.000Z","updatedAt":"2023-05-24T00:00:00.000Z","deletedAt":null}}]}
+2023-05-24 15:59:58.204[error] Error: Unauthorized token
+2023-05-24 16:00:02.916[error] Error: Unauthorized token
+2023-05-24 16:00:09.610[error] Error: Unauthorized token
+2023-05-24 16:00:15.547[error] Error: Unauthorized token
+2023-05-24 16:00:34.892[error] Error: Unauthorized token
+2023-05-24 16:01:22.869[error] Error: Unauthorized token
+2023-05-24 16:01:27.138[error] Error: Unauthorized token
+2023-05-24 16:01:32.736[error] Error: Unauthorized token
+2023-05-24 16:01:38.183[error] Error: Unauthorized token
+2023-05-24 16:01:43.794[error] Error: Unauthorized token
+2023-05-24 16:01:48.933[error] Error: Unauthorized token
+2023-05-24 16:01:54.129[info] (post.list.params) {"userIds":null}
+2023-05-24 16:01:54.153[debug] (postService.list) {"count":1,"rows":[{"id":1,"boardId":1,"userId":1,"title":"banga","content":"안녕","imagePath":"mycom","filePath":"none","viewCount":100,"createdAt":"2023-05-24T00:00:00.000Z","updatedAt":"2023-05-24T00:00:00.000Z","deletedAt":null,"User":{"id":1,"name":"kimhi","role":"1","email":"1@1","phone":"111-1111-1111"}}]}
+2023-05-24 16:01:54.155[info] (post.list.result) {"count":1,"rows":[{"id":1,"boardId":1,"userId":1,"title":"banga","content":"안녕","imagePath":"mycom","filePath":"none","viewCount":100,"createdAt":"2023-05-24T00:00:00.000Z","updatedAt":"2023-05-24T00:00:00.000Z","deletedAt":null,"User":{"id":1,"name":"kimhi","role":"1","email":"1@1","phone":"111-1111-1111"}}]}
+2023-05-24 16:02:01.372[info] (post.info.params) {"id":"1"}
+2023-05-24 16:02:01.385[debug] (postService.info) {"id":1,"boardId":1,"userId":1,"title":"banga","content":"안녕","imagePath":"mycom","filePath":"none","viewCount":100,"createdAt":"2023-05-24T00:00:00.000Z","updatedAt":"2023-05-24T00:00:00.000Z","deletedAt":null,"Board":{"id":1,"title":"hi","active":true,"createdAt":"2023-05-24T00:00:00.000Z"},"User":{"id":1,"name":"kimhi","role":"1","email":"1@1","phone":"111-1111-1111","Department":{"id":1,"name":"hi","createdAt":"2023-05-24T00:00:00.000Z"}}}
+2023-05-24 16:02:01.389[info] (post.info.result) {"id":1,"boardId":1,"userId":1,"title":"banga","content":"안녕","imagePath":"mycom","filePath":"none","viewCount":101,"createdAt":"2023-05-24T00:00:00.000Z","updatedAt":"2023-05-24T00:00:00.000Z","deletedAt":null,"Board":{"id":1,"title":"hi","active":true,"createdAt":"2023-05-24T00:00:00.000Z"},"User":{"id":1,"name":"kimhi","role":"1","email":"1@1","phone":"111-1111-1111","Department":{"id":1,"name":"hi","createdAt":"2023-05-24T00:00:00.000Z"}}}
+2023-05-24 16:02:06.152[info] (post.update.params) {"id":"1","title":"테스트 상세설명","content":"d수정d","imagePath":"ss","filePath":"sda"}
+2023-05-24 16:02:06.163[debug] (postService.edit) {"updatedCount":1}
+2023-05-24 16:02:06.164[info] (post.update.result) {"updatedCount":1}
+2023-05-24 16:02:12.989[info] (post.delete.params) {"id":"1"}
+2023-05-24 16:02:12.995[debug] (postService.) {"deletedCount":1}
+2023-05-24 16:02:12.997[info] (post.delete.result) {"deletedCount":1}
+2023-05-24 16:02:55.101[info] app start
+2023-05-24 16:02:55.157[info] DB connection success
+2023-05-24 16:02:55.189[info] Sequelize sync success
+2023-05-24 16:03:25.882[info] (user.reg.params) {"departmentId":1,"name":"test","userid":"test","password":"test","role":"member","email":"kim@email.com","phone":"010-1234-5678"}
+2023-05-24 16:03:25.885[debug] (userService.makePassword) "test"
+2023-05-24 16:03:25.898[error] (userService.reg) SequelizeUniqueConstraintError: Validation error
+2023-05-24 16:03:34.301[info] (user.reg.params) {"departmentId":2,"name":"test","userid":"test","password":"test","role":"member","email":"kim@email.com","phone":"010-1234-5678"}
+2023-05-24 16:03:34.303[debug] (userService.makePassword) "test"
+2023-05-24 16:03:34.307[error] (userService.reg) SequelizeUniqueConstraintError: Validation error
+2023-05-24 16:03:52.954[info] (user.reg.params) {"departmentId":2,"name":"ss","userid":"ss","password":"test","role":"member","email":"kim@email.com","phone":"010-1234-5678"}
+2023-05-24 16:03:52.956[debug] (userService.makePassword) "test"
+2023-05-24 16:03:52.968[error] (userService.reg) SequelizeForeignKeyConstraintError: Cannot add or update a child row: a foreign key constraint fails (`postboard`.`users`, CONSTRAINT `users_ibfk_1` FOREIGN KEY (`department_id`) REFERENCES `departments` (`id`) ON DELETE SET NULL ON UPDATE CASCADE)
+2023-05-24 16:04:06.598[info] (user.reg.params) {"departmentId":1,"name":"ss","userid":"ss","password":"test","role":"member","email":"kim@email.com","phone":"010-1234-5678"}
+2023-05-24 16:04:06.600[debug] (userService.makePassword) "test"
+2023-05-24 16:04:06.615[debug] (userService.reg) {"id":6,"departmentId":1,"name":"ss","userid":"ss","role":"member","email":"kim@email.com","phone":"010-1234-5678","updatedAt":"2023-05-24T07:04:06.601Z","createdAt":"2023-05-24T07:04:06.601Z"}
+2023-05-24 16:04:06.616[info] (user.reg.result) {"id":6,"departmentId":1,"name":"ss","userid":"ss","role":"member","email":"kim@email.com","phone":"010-1234-5678","updatedAt":"2023-05-24T07:04:06.601Z","createdAt":"2023-05-24T07:04:06.601Z"}
+2023-05-24 16:05:14.537[info] app start
+2023-05-24 16:05:14.593[info] DB connection success
+2023-05-24 16:05:14.625[info] Sequelize sync success
+2023-05-24 16:05:46.423[info] (user.list.params) {}
+2023-05-24 16:05:46.447[debug] (userService.list) {"count":3,"rows":[{"id":6,"departmentId":1,"name":"ss","userid":"ss","role":"member","email":"kim@email.com","phone":"010-1234-5678","updatedPwDate":null,"createdAt":"2023-05-24T07:04:06.000Z","updatedAt":"2023-05-24T07:04:06.000Z","deletedAt":null,"Department":{"id":1,"name":"hi","code":"1","description":"hihi","createdAt":"2023-05-24T00:00:00.000Z","updatedAt":"2023-05-24T00:00:00.000Z","deletedAt":null}},{"id":2,"departmentId":1,"name":"test","userid":"test","role":"member","email":"kim@email.com","phone":"010-1234-5678","updatedPwDate":null,"createdAt":"2023-05-24T06:58:56.000Z","updatedAt":"2023-05-24T06:58:56.000Z","deletedAt":null,"Department":{"id":1,"name":"hi","code":"1","description":"hihi","createdAt":"2023-05-24T00:00:00.000Z","updatedAt":"2023-05-24T00:00:00.000Z","deletedAt":null}},{"id":1,"departmentId":1,"name":"kimhi","userid":"1","role":"1","email":"1@1","phone":"111-1111-1111","updatedPwDate":"2023-05-24T00:00:00.000Z","createdAt":"2023-05-24T00:00:00.000Z","updatedAt":"2023-05-24T00:00:00.000Z","deletedAt":null,"Department":{"id":1,"name":"hi","code":"1","description":"hihi","createdAt":"2023-05-24T00:00:00.000Z","updatedAt":"2023-05-24T00:00:00.000Z","deletedAt":null}}]}
+2023-05-24 16:05:46.450[info] (user.list.result) {"count":3,"rows":[{"id":6,"departmentId":1,"name":"ss","userid":"ss","role":"member","email":"kim@email.com","phone":"010-1234-5678","updatedPwDate":null,"createdAt":"2023-05-24T07:04:06.000Z","updatedAt":"2023-05-24T07:04:06.000Z","deletedAt":null,"Department":{"id":1,"name":"hi","code":"1","description":"hihi","createdAt":"2023-05-24T00:00:00.000Z","updatedAt":"2023-05-24T00:00:00.000Z","deletedAt":null}},{"id":2,"departmentId":1,"name":"test","userid":"test","role":"member","email":"kim@email.com","phone":"010-1234-5678","updatedPwDate":null,"createdAt":"2023-05-24T06:58:56.000Z","updatedAt":"2023-05-24T06:58:56.000Z","deletedAt":null,"Department":{"id":1,"name":"hi","code":"1","description":"hihi","createdAt":"2023-05-24T00:00:00.000Z","updatedAt":"2023-05-24T00:00:00.000Z","deletedAt":null}},{"id":1,"departmentId":1,"name":"kimhi","userid":"1","role":"1","email":"1@1","phone":"111-1111-1111","updatedPwDate":"2023-05-24T00:00:00.000Z","createdAt":"2023-05-24T00:00:00.000Z","updatedAt":"2023-05-24T00:00:00.000Z","deletedAt":null,"Department":{"id":1,"name":"hi","code":"1","description":"hihi","createdAt":"2023-05-24T00:00:00.000Z","updatedAt":"2023-05-24T00:00:00.000Z","deletedAt":null}}]}
+2023-05-24 16:09:04.079[info] app start
+2023-05-24 16:09:04.172[info] DB connection success
+2023-05-24 16:09:04.202[info] Sequelize sync success
+2023-05-24 16:09:14.275[info] app start
+2023-05-24 16:09:14.328[info] DB connection success
+2023-05-24 16:09:14.358[info] Sequelize sync success
+2023-05-24 16:22:23.642[info] app start
+2023-05-24 16:22:23.700[info] DB connection success
+2023-05-24 16:22:23.730[info] Sequelize sync success
+2023-05-24 16:22:27.186[error] Error: Unauthorized token
+2023-05-24 16:23:33.306[info] app start
+2023-05-24 16:23:33.362[info] DB connection success
+2023-05-24 16:23:33.394[info] Sequelize sync success
+2023-05-24 16:24:27.523[info] app start
+2023-05-24 16:24:27.579[info] DB connection success
+2023-05-24 16:24:27.610[info] Sequelize sync success
+2023-05-24 16:24:54.679[error] Error: Unauthorized token
+2023-05-24 16:25:22.297[info] app start
+2023-05-24 16:25:22.354[info] DB connection success
+2023-05-24 16:25:22.386[info] Sequelize sync success
+2023-05-24 16:25:55.155[info] app start
+2023-05-24 16:25:55.221[info] DB connection success
+2023-05-24 16:25:55.256[info] Sequelize sync success
+2023-05-24 16:25:58.937[error] Error: Unauthorized token
+2023-05-24 16:27:16.270[info] app start
+2023-05-24 16:27:16.329[info] DB connection success
+2023-05-24 16:27:16.375[info] Sequelize sync success
+2023-05-24 16:27:24.646[error] Error: Unauthorized token
+2023-05-24 16:37:33.165[info] (auth.token.params) {"userid":"test","password":"test"}
+2023-05-24 16:37:33.176[error] (userService.login) Error: WHERE parameter "userId" has invalid "undefined" value
+2023-05-24 16:37:49.091[info] (auth.token.params) {"password":"test"}
+2023-05-24 16:37:49.092[error] Error: Not allowed null (userid, password)
+2023-05-24 16:37:49.093[error] (userService.login) Error: WHERE parameter "userId" has invalid "undefined" value
+2023-05-24 16:38:08.480[info] app start
+2023-05-24 16:38:08.543[info] DB connection success
+2023-05-24 16:38:08.577[info] Sequelize sync success
+2023-05-24 16:38:12.668[info] (auth.token.params) {"userId":"test","password":"test"}
+2023-05-24 16:38:12.669[error] Error: Not allowed null (userid, password)
+2023-05-24 16:38:12.683[debug] (userService.login) {"id":2,"userId":"test","password":"Tq6WXrhTXLiMnu8XIe9lQoQ3WJj7x74xvLE+RAe2uTOOZxFAEM6UaCrHtMgUosTe1VMpJAFEgohaKu/NER9xOg==.1d561ac6a326b64c6c9b23aa18a0a3ba793c8f89ff4d4aa3a6d3159e4c8bf771341f8b3073115a3a5d9720eced5354ccc0cc0b371d6b141cec8210e3e10f786e","name":"test","role":"member"}
+2023-05-24 16:38:12.686[debug] (userService.checkPassword) true
+2023-05-24 16:38:12.687[info] (auth.token.result) {"id":2,"userId":"test","password":"Tq6WXrhTXLiMnu8XIe9lQoQ3WJj7x74xvLE+RAe2uTOOZxFAEM6UaCrHtMgUosTe1VMpJAFEgohaKu/NER9xOg==.1d561ac6a326b64c6c9b23aa18a0a3ba793c8f89ff4d4aa3a6d3159e4c8bf771341f8b3073115a3a5d9720eced5354ccc0cc0b371d6b141cec8210e3e10f786e","name":"test","role":"member"}
+2023-05-24 16:39:24.964[info] app start
+2023-05-24 16:39:25.023[info] DB connection success
+2023-05-24 16:39:25.054[info] Sequelize sync success
+2023-05-24 16:40:07.334[info] app start
+2023-05-24 16:40:07.393[info] DB connection success
+2023-05-24 16:40:07.424[info] Sequelize sync success
+2023-05-24 16:40:14.358[info] (auth.token.params) {"userid":"test","password":"test"}
+2023-05-24 16:40:14.364[error] (userService.login) Error: WHERE parameter "userId" has invalid "undefined" value
+2023-05-24 16:41:26.200[info] app start
+2023-05-24 16:41:26.264[info] DB connection success
+2023-05-24 16:41:26.299[info] Sequelize sync success
+2023-05-24 16:41:47.711[info] app start
+2023-05-24 16:41:47.784[info] DB connection success
+2023-05-24 16:41:47.821[info] Sequelize sync success
+2023-05-24 16:41:51.096[info] (auth.token.params) {"userid":"test","password":"test"}
+2023-05-24 16:41:51.111[debug] (userService.login) {"id":2,"userId":"test","password":"Tq6WXrhTXLiMnu8XIe9lQoQ3WJj7x74xvLE+RAe2uTOOZxFAEM6UaCrHtMgUosTe1VMpJAFEgohaKu/NER9xOg==.1d561ac6a326b64c6c9b23aa18a0a3ba793c8f89ff4d4aa3a6d3159e4c8bf771341f8b3073115a3a5d9720eced5354ccc0cc0b371d6b141cec8210e3e10f786e","name":"test","role":"member"}
+2023-05-24 16:41:51.116[debug] (userService.checkPassword) true
+2023-05-24 16:41:51.118[info] (auth.token.result) {"id":2,"userId":"test","password":"Tq6WXrhTXLiMnu8XIe9lQoQ3WJj7x74xvLE+RAe2uTOOZxFAEM6UaCrHtMgUosTe1VMpJAFEgohaKu/NER9xOg==.1d561ac6a326b64c6c9b23aa18a0a3ba793c8f89ff4d4aa3a6d3159e4c8bf771341f8b3073115a3a5d9720eced5354ccc0cc0b371d6b141cec8210e3e10f786e","name":"test","role":"member"}
+2023-05-24 16:44:13.933[error] Error: Unauthorized token
+2023-05-24 16:44:24.300[info] uploads\1684914264295-a.jpg
+2023-05-24 16:44:24.301[info] (post.reg.result) {}
+2023-05-24 16:44:48.816[error] Error: Unauthorized token
+2023-05-24 16:45:01.191[info] (post.reg.params) {"boardId":"1","title":"테스트 상세설명","content":"dd","imagePath":"ss","filePath":"sda","userId":"SMafaCTEAM"}
+2023-05-24 16:45:01.196[error] (postService.reg) SequelizeValidationError: notNull Violation: User.userid cannot be null,
+notNull Violation: User.password cannot be null
+2023-05-24 16:47:04.358[info] app start
+2023-05-24 16:47:04.419[info] DB connection success
+2023-05-24 16:47:04.452[info] Sequelize sync success
+2023-05-24 16:48:16.890[info] app start
+2023-05-24 16:48:16.949[info] DB connection success
+2023-05-24 16:48:16.982[info] Sequelize sync success
+2023-05-24 16:48:38.766[info] uploads\1684914518757-a.jpg
+2023-05-24 16:48:38.767[info] (post.reg.result) {"originalname":"a.jpg","path":"uploads\\1684914518757-a.jpg"}
+2023-05-24 16:51:25.261[info] app start
+2023-05-24 16:51:25.323[info] DB connection success
+2023-05-24 16:51:25.357[info] Sequelize sync success

@@ -1,6 +1,6 @@
 const { Op } = require('sequelize');
 const {
-  User, Board, Post, Department,
+  User, Board, Post, Department, Comment,
 } = require('../models/index');
 
 const dao = {
@@ -61,6 +61,10 @@ const dao = {
           model: Board,
           as: 'Board',
           attributes: Board.includeAttributes,
+        }, {
+          model: Comment,
+          as: 'Comment',
+          attributes: Comment.includeAttributes,
         }, {
           model: User,
           as: 'User',
